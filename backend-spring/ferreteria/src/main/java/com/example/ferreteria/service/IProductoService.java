@@ -1,0 +1,18 @@
+package com.example.ferreteria.service;
+
+import java.util.List;
+
+import com.example.ferreteria.entity.Producto;
+
+public interface IProductoService {
+
+	public List<Producto> findAll();
+	
+	public Producto findById(Long idProducto);
+	
+	public Producto save(Producto producto);
+	
+	public Producto update(Producto producto, Long idProducto);
+	
+	public void delete(Long idProducto);
+}

@@ -1,0 +1,79 @@
+package com.example.ferreteria.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.ferreteria.custom.VentaDetalle;
+import com.example.ferreteria.dao.IVentaDao;
+import com.example.ferreteria.entity.DetalleVenta;
+import com.example.ferreteria.entity.Venta;
+
+@Service
+public class VentaServiceImpl implements IVentaService{
+
+	@Autowired
+	private IVentaDao ventaDao;
+	
+	@Autowired
+	private DetalleVentaServiceImpl detalleVentaService;
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Venta> findAll() {
+		
+		return (List<Venta>)ventaDao.findAll();
+	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public Venta findById(Long idVenta) {
+		
+		return ventaDao.findById(idVenta).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Venta save(Venta venta) {
+		
+		return ventaDao.save(venta);
+	}
+	
+	@Override
+	@Transactional
+	public Venta saveVentaDetalle(VentaDetalle ventaDetalle) {
+		
+		Venta venta = ventaDao.save(ventaDetalle.getVenta());
+		
+		for (DetalleVenta detVenta : ventaDetalle.getDetallesVenta()) {
+			
+			detVenta.setVenta(venta);
+			detalleVentaService.save(detVenta);
+		}
+		
+		return venta;
+	}
+
+	@Override
+	@Transactional
+	public Venta update(Venta venta, Long idVenta) {
+		
+		Venta ventaModificada = this.findById(idVenta);
+		
+		ventaModificada.setTotal(venta.getTotal());
+		
+		return ventaDao.save(ventaModificada);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long idVenta) {
+		
+		ventaDao.deleteById(idVenta);
+	}
+	
+}
+
+

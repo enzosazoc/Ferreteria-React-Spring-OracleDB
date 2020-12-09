@@ -1,0 +1,68 @@
+package com.example.ferreteria.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.ferme.dao.IDetalleOrdenDao;
+import com.example.ferme.entity.DetalleOrden;
+
+@Service
+public class DetalleOrdenServiceImpl implements IDetalleOrdenService{
+
+	@Autowired
+	private IDetalleOrdenDao detalleOrdenDao;
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<DetalleOrden> findAll() {
+		
+		return (List<DetalleOrden>)detalleOrdenDao.findAll();
+	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public DetalleOrden findById(Long idDetalleOrden) {
+		
+		return detalleOrdenDao.findById(idDetalleOrden).orElse(null);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<DetalleOrden> findByIdOrden(Long idOrden) {
+		
+		return detalleOrdenDao.findByOrden_IdOrden(idOrden);
+	}
+	
+	@Override
+	@Transactional
+	public DetalleOrden save(DetalleOrden detalleOrden) {
+		
+		return detalleOrdenDao.save(detalleOrden);
+	}
+
+	@Override
+	@Transactional
+	public DetalleOrden update(DetalleOrden detalleOrden, Long idDetalleOrden) {
+		
+		DetalleOrden detalleOrdenModificada = this.findById(idDetalleOrden);
+		
+		detalleOrdenModificada.setPrecioUnitario(detalleOrden.getPrecioUnitario());
+		detalleOrdenModificada.setCantidad(detalleOrden.getCantidad());
+		detalleOrdenModificada.setTotal(detalleOrden.getTotal());
+		detalleOrdenModificada.setProducto(detalleOrden.getProducto());
+		detalleOrdenModificada.setOrden(detalleOrden.getOrden());
+		
+		return detalleOrdenDao.save(detalleOrdenModificada);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long idDetalleOrden) {
+		
+		detalleOrdenDao.deleteById(idDetalleOrden);
+	}
+
+}

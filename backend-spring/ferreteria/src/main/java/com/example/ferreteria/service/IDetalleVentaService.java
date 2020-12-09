@@ -1,0 +1,20 @@
+package com.example.ferreteria.service;
+
+import java.util.List;
+
+import com.example.ferreteria.entity.DetalleVenta;
+
+public interface IDetalleVentaService {
+
+	public List<DetalleVenta> findAll();
+	
+	public DetalleVenta findById(Long idDetalleVenta);
+	
+	public List<DetalleVenta> findByIdVenta(Long idVenta);
+	
+	public DetalleVenta save(DetalleVenta detalleVenta);
+	
+	public DetalleVenta update(DetalleVenta detalleVenta, Long idDetalleVenta);
+	
+	public void delete(Long idDetalleVenta);
+}

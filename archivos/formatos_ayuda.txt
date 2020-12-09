@@ -1,0 +1,32 @@
+	
+CONTROLLER
+	
+	@Autowired
+	private XXXXServiceImpl xxxxService;
+	
+	@GetMapping("/xxxxs")
+	public List<XXXX> obtenerXXXXs(){
+		
+		return xxxxService.findAll();
+	}
+	
+	@PostMapping("/xxxxs")
+	@ResponseStatus(HttpStatus.CREATED)
+	public XXXX crearXXXX(@RequestBody XXXX xxxx) {
+		
+		return xxxxService.save(xxxx);
+	}
+	
+	@PutMapping("/xxxxs/{idxxxx}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public XXXX actualizarXXXX(@RequestBody XXXX xxxx, @PathVariable Long idxxxx) {
+		
+		return xxxxService.update(xxxx, idxxxx);
+	}
+	
+	@DeleteMapping("/xxxxs/{idxxxx}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void eliminarXXXX(@PathVariable Long idxxxx) {
+		
+		xxxxService.delete(idxxxx);
+	}

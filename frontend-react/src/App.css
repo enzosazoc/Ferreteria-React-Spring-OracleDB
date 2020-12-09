@@ -1,0 +1,140 @@
+
+/* Tema */
+:root {
+  --color-1: #324e79;
+  --color-2: #ffffff;
+  --color-3: #F7F7F7;
+  --color-4: #757575;
+  --color-5: #324e79;
+}
+
+
+/* Fuentes */
+.fs-1{
+  font-size: 24px;
+}
+.fs-2{
+  font-size: 18px;
+}
+.fs-3{
+  font-size: 16px;
+}
+.fs-4{
+  font-size: 14px;
+}
+.fs-5{
+  font-size: 13px;
+}
+
+.fw-1{
+  font-weight: 700;
+}
+.fw-2{
+  font-weight: 500;
+}
+.fw-3{
+  font-weight: 400;
+}
+.fw-4{
+  font-weight: 300;
+}
+
+
+/* Sombras */
+.sombra-1{
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.3);
+}
+.sombra-2{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+}
+
+
+/* Botones */
+.boton-1{
+  background-color: var(--color-1);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+.boton-1:hover{
+  background-color: #080d44;
+  color: white;
+}
+.boton-2{
+  background-color: transparent;
+  color: var(--color-4);
+  font-size: 14px;
+  font-weight: 500;
+}
+.boton-2:hover{
+  background-color: #6d6d6d;
+  color: white;
+}
+.boton-3{
+  background-color: #009688;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+.boton-3:hover{
+  background-color: #035a52;
+  color: white;
+}
+
+/* Lista */
+.lista-item{
+  padding: 10px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border: solid 1px #DEE2E6;
+  color: #757575;
+  background-color: #ffffff;
+  transition: all 0.2s;
+}
+.lista-item:first-child{
+  border-radius: 3px 0px 0px 3px;
+}
+.lista-item:last-child{
+  border-radius: 0px 3px 3px 0px;
+}
+.lista-item:hover{
+  background-color: #DEE2E6;
+  text-decoration: none;
+  border: solid 1px #DEE2E6;
+  color: var(--bg-color-1);
+  
+}
+.activo{
+  background-color: #DEE2E6;
+  color: var(--bg-color-1);
+  border: solid 1px #DEE2E6;
+}
+
+/* Background color */
+.bgc-1{
+  background-color: var(--color-1);
+}
+.bgc-2{
+  background-color: var(--color-2);
+}
+.bgc-3{
+  background-color: var(--color-3);
+}
+.bgc-4{
+  background-color: var(--color-4);
+}
+.bgc-5{
+  background-color: var(--color-5);
+}
+
+/* Text color */
+.tc-1{
+  color: var(--color-1);
+}
+.tc-2{
+  color: var(--color-4);
+}
+.tc-3{
+  color: #ffffff;
+}
+

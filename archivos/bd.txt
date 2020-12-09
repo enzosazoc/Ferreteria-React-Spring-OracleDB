@@ -1,0 +1,107 @@
+-- INSERT
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Cocina');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Baño');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Gasfitería');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Herramientas');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Construcción');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Pisos');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Pintura');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Iluminación');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Jardín');
+INSERT INTO categoria (id_categoria, nombre) VALUES(seq_categoria.nextval, 'Mascotas');
+
+INSERT INTO proveedor (id_proveedor, rut, nombre, direccion, telefono, rubro, moneda) VALUES(seq_proveedor.nextval, '76234765-4', 'Nombre-admin', 'Av. La paz 123, Independencia', 24534367, 'Rubro-admin', 'CLP');
+INSERT INTO proveedor (id_proveedor, rut, nombre, direccion, telefono, rubro, moneda) VALUES(seq_proveedor.nextval, '76131765-k', 'Ferretería Santiago', 'Av. Vicuña Mackenna 1345, La Florida', 24114367, 'Comercio al por mayor y menor', 'CLP');
+INSERT INTO proveedor (id_proveedor, rut, nombre, direccion, telefono, rubro, moneda) VALUES(seq_proveedor.nextval, '45698722-k', 'Aridos Rio Bueno', 'calle las Higueras 0547, Talagante', 28172854, 'Aridos', 'CLP');
+INSERT INTO proveedor (id_proveedor, rut, nombre, direccion, telefono, rubro, moneda) VALUES(seq_proveedor.nextval, '8286036-2', 'ADEPAC', 'Av. Condell Nº1808, Ñuñoa', 21732527, 'Comercio al por mayor y menor', 'CLP');
+
+INSERT INTO empleado (id_empleado, run, nombres, apellidop, apellidom) VALUES(seq_empleado.nextval, '11111111-1', 'Andres Felipe', 'Perez', 'Muñoz');
+INSERT INTO empleado (id_empleado, run, nombres, apellidop, apellidom) VALUES(seq_empleado.nextval, '6678237-4', 'Sandra', 'Sanhueza', 'Vera');
+INSERT INTO empleado (id_empleado, run, nombres, apellidop, apellidom) VALUES(seq_empleado.nextval, '20050333-2', 'Israel', 'Herrera', 'Galindo');
+
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Sus medidas de 30 cm de alto x 12,5 cm de ancho, espacio que te ayudará a que el lavado sea rápido y cómodo.', 'Stretto', 'Llave lavaplatos tipo V', 29900, 12, 1, 4);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Set cortina 6 piezas poliéster 180x180 cm Flowers calypso multicolor.', 'Mashini', 'Set cortina 6 piezas poliester', 19990, 40, 2, 4);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Está especialmente diseñado para sistemas de presión (fitting) de cañerías, por ello es indispensable en remodelaciones y obras nuevas que impliquen instalaciones de plomeria.', 'Tigre', 'Codo 90 PVC', 90, 50, 3, 4);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Este artefacto es una herramienta que pela cinco tamaños diferentes de cables.', 'Redline', 'Alicate pelacables 31 cm', 8900, 30, 4, 4);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Ideal para trabajos en casa, este Set de destornilladores acero 4 unidades Redline.', 'Redline', 'Set de destornilladores acero 4 unidades', 6900, 20, 4, 4);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'El Ladrillo 7 Súper Santiago es un elemento para albañilería armada y confinada de gran utilidad para obras de todo tipo. Se trata de ladrillos arcilla que te darán la posibilidad de edificar la estructura de una casa o edificio.', 'Ceramicas Santiago', 'Ladrillo 7 super', 290, 340, 5, 3);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'La Cerámica 57x57 cm Pupuya beige, de Incefra, modelo Pupuya, te ofrece una alternativa diferente para hacerle una actualización con estilo a los espacios de tu casa.', 'Incefra', 'Ceramica beige', 4900, 224, 6, 4);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Convertidor de oxido, anticorrosivo y esmalte de terminación, secado al tacto en 15 minutos.', 'KOLOR', 'Esmalte sintético base agua', 21000, 50, 7, 4);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Base agua 100% acrílica de terminación satinada', 'Tricolor', 'Pintura para piscina base agua gris 1 gl', 39000, 15, 7, 2);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Lámpara de techo 60 W, ancho: 17 cm, alto: 22cm.', 'Casa Bonita', 'Lampara de techo 60 W', 8900, 24, 8, 2);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Entre las características del Pulverizador presión Gardena se destaca su ergonomía, que se adapta a tu mano para que su uso te resulte cómodo.', 'Gardena', 'Pulverizador manual 5 litros', 32000, 12, 9, 2);
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Antideslizante en acero inoxible', 'Pets And Friends', 'Plato antideslizante', 3900, 7, 10, 2);
+
+INSERT INTO venta (id_venta, total, estado, fecha) VALUES(seq_venta.nextval, 65600, 'Cerrada', TO_DATE('10-09-2020', 'DD-MM-YY'));
+INSERT INTO venta (id_venta, total, estado, fecha) VALUES(seq_venta.nextval, 29900, 'Cancelada', TO_DATE('11-09-2020','DD-MM-YY'));
+
+INSERT INTO detalle_venta (id_detalle_venta, cantidad, precio_unitario, total, id_producto, id_venta) VALUES(seq_detalle_venta.nextval, 2, 29900, 59800, 1, 1);
+INSERT INTO detalle_venta (id_detalle_venta, cantidad, precio_unitario, total, id_producto, id_venta) VALUES(seq_detalle_venta.nextval, 20, 290, 5800, 2, 1);
+INSERT INTO detalle_venta (id_detalle_venta, cantidad, precio_unitario, total, id_producto, id_venta) VALUES(seq_detalle_venta.nextval, 2, 29900, 29900, 1, 2);
+
+INSERT INTO orden (id_orden, total, estado, fecha_creacion, fecha_envio, id_empleado, id_proveedor) VALUES(seq_orden.nextval, 232000, 'Enviada', to_date('03/05/20','DD/MM/RR'), to_date('18/05/20','DD/MM/RR'), 1, 3);
+INSERT INTO orden (id_orden, total, estado, fecha_creacion, fecha_envio, id_empleado, id_proveedor) VALUES(seq_orden.nextval, 203450, 'Enviada', to_date('18/05/20','DD/MM/RR'), to_date('19/05/20','DD/MM/RR'), 1, 4);
+INSERT INTO orden (id_orden, total, estado, fecha_creacion, fecha_envio, id_empleado, id_proveedor) VALUES(seq_orden.nextval, 84000, 'Creada', to_date('20/05/20','DD/MM/RR'), NULL, 2, 4);
+
+INSERT INTO detalle_orden (id_detalle_orden, precio_unitario, cantidad, total, id_orden, id_producto) VALUES(seq_detalle_orden.nextval, 290, 800, 232000, 1, 6);
+INSERT INTO detalle_orden (id_detalle_orden, precio_unitario, cantidad, total, id_orden, id_producto) VALUES(seq_detalle_orden.nextval, 6900, 15, 103500, 2, 5);
+INSERT INTO detalle_orden (id_detalle_orden, precio_unitario, cantidad, total, id_orden, id_producto) VALUES(seq_detalle_orden.nextval, 19990, 5, 99950, 2, 2);
+INSERT INTO detalle_orden (id_detalle_orden, precio_unitario, cantidad, total, id_orden, id_producto) VALUES(seq_detalle_orden.nextval, 21000, 4, 84000, 3, 8);
+
+COMMIT;
+
+
+-- DELETE FROM
+DELETE FROM detalle_venta;
+DELETE FROM venta;
+DELETE FROM detalle_orden;
+DELETE FROM producto;
+DELETE FROM categoria;
+DELETE FROM orden;
+DELETE FROM proveedor;
+DELETE FROM empleado;
+
+-- DROP TABLE
+DROP TABLE detalle_venta;
+DROP TABLE venta;
+DROP TABLE detalle_orden;
+DROP TABLE producto;
+DROP TABLE categoria;
+DROP TABLE orden;
+DROP TABLE proveedor;
+DROP TABLE empleado;
+
+-- DROP SEQUENCE
+DROP SEQUENCE seq_detalle_venta;
+DROP SEQUENCE seq_producto;
+DROP SEQUENCE seq_venta;
+DROP SEQUENCE seq_categoria;
+DROP SEQUENCE seq_detalle_orden;
+DROP SEQUENCE seq_orden;
+DROP SEQUENCE seq_proveedor;
+DROP SEQUENCE seq_empleado;
+
+-- CREATE SEQUENCE
+CREATE SEQUENCE seq_detalle_venta;
+CREATE SEQUENCE seq_producto;
+CREATE SEQUENCE seq_venta;
+CREATE SEQUENCE seq_categoria;
+CREATE SEQUENCE seq_detalle_orden;
+CREATE SEQUENCE seq_orden;
+CREATE SEQUENCE seq_proveedor;
+CREATE SEQUENCE seq_empleado;
+
+
+
+-- FORMATO
+INSERT INTO producto (id_producto, descripcion, marca, nombre, precio, stock, id_categoria, id_proveedor) VALUES(seq_producto.nextval, 'Descripción', 'Marca', 'nombre', 'precio', 'stock', id_categoria, id_proveedor);
+
+INSERT INTO empleado (id_empleado, run, nombres, apellidop, apellidom) VALUES(seq_empleado.nextval, 'run', 'nombres', 'apellidop', 'apellidom');
+
+INSERT INTO proveedor (id_proveedor, rut, nombre, direccion, telefono, rubro, moneda) VALUES(seq_proveedor.nextval, 'rut', 'nombre', 'direccion', telefono, 'rubro', 'moneda');
+
+INSERT INTO orden (id_orden, total, estado, fecha_creacion, fecha_envio, id_empleado, id_proveedor) VALUES(seq_orden.nextval, total, 'estado', 'fecha_creacion', 'fecha_envio', id_empleado, id_proveedor);
+
+INSERT INTO detalle_orden (id_detalle_orden, precio_unitario, cantidad, total, id_orden, id_producto) VALUES(seq_detalle_orden.nextval, precio_unitario, cantidad, total, id_orden, id_producto);
+
+

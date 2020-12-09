@@ -1,0 +1,83 @@
+package com.example.ferreteria.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.ferme.custom.OrdenDetalle;
+import com.example.ferme.dao.IDetalleOrdenDao;
+import com.example.ferme.dao.IOrdenDao;
+import com.example.ferme.entity.DetalleOrden;
+import com.example.ferme.entity.Orden;
+
+@Service
+public class OrdenServiceImpl implements IOrdenService{
+
+	@Autowired
+	private IOrdenDao ordenDao;
+	
+	@Autowired
+	private IDetalleOrdenDao detalleOrdenDao;
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Orden> findAll() {
+		
+		return (List<Orden>)ordenDao.findAll();
+	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public Orden findById(Long idOrden) {
+		
+		return ordenDao.findById(idOrden).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Orden save(Orden orden) {
+		
+		return ordenDao.save(orden);
+	}
+	
+	@Override
+	@Transactional
+	public Orden saveOrdenDetalle(OrdenDetalle ordenDetalle) {
+		System.out.println("aaaaaa");
+		Orden orden = ordenDao.save(ordenDetalle.getOrden());
+		
+		for (DetalleOrden detOrden : ordenDetalle.getDetallesOrden()) {
+			
+			detOrden.setOrden(orden);
+			detalleOrdenDao.save(detOrden);
+		}
+		
+		return orden;
+	}
+
+	@Override
+	@Transactional
+	public Orden update(Orden orden, Long idOrden) {
+		
+		Orden ordenModificada = this.findById(idOrden);
+		
+		ordenModificada.setTotal(orden.getTotal());
+		ordenModificada.setEstado(orden.getEstado());
+		ordenModificada.setFechaCreacion(orden.getFechaCreacion());
+		ordenModificada.setFechaEnvio(orden.getFechaEnvio());
+		ordenModificada.setEmpleado(orden.getEmpleado());
+		ordenModificada.setProveedor(orden.getProveedor());
+		
+		return ordenDao.save(ordenModificada);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long idOrden) {
+		
+		ordenDao.deleteById(idOrden);
+	}
+
+}

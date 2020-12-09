@@ -1,0 +1,5 @@
+1598146728935	Rename type 'User'
+1598146742579	Rename type 'Role'
+1598146758223	Rename type 'UserService'
+1598146772753	Rename type 'IUserService'
+1598146792845	Rename type 'IUserDao'
